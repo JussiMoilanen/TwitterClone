@@ -1,0 +1,24 @@
+version: "3"
+services:
+  express:
+    container_name: express_viikko7
+    restart: always
+    build: ./server
+    ports:
+      - "8000:8000"
+    links:
+      - mongo
+    depends_on:
+      - mongo
+
+  vue:
+    container_name: vue_viikko7
+    build: ./client
+    ports:
+      - "8080:8080"
+
+  mongo:
+    container_name: mongo_viikko7
+    image: mongo
+    ports:
+      - "27017:27017"
