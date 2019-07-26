@@ -1,24 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <PostComponent msg="Welcome to Your Vue.js App"/>
+    <v-app>
+      <v-content>
+        <Toolbar />
+        <router-view></router-view>
+      </v-content>
+    </v-app>
   </div>
 </template>
 
 <script>
-import PostComponent from './components/PostComponent.vue'
+import Toolbar from "./components/Toolbar";
 
 export default {
-  name: 'app',
+  name: "App",
   components: {
-    PostComponent
+    Toolbar
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

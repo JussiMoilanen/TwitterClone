@@ -1,7 +1,7 @@
 version: "3"
 services:
   express:
-    container_name: express_viikko7
+    container_name: express
     restart: always
     build: ./server
     ports:
@@ -12,13 +12,17 @@ services:
       - mongo
 
   vue:
-    container_name: vue_viikko7
+    container_name: vue
     build: ./client
     ports:
       - "8080:8080"
 
   mongo:
-    container_name: mongo_viikko7
+    container_name: mongo
     image: mongo
+    volumes:
+      - mongodb-datavolume:/data/db
     ports:
       - "27017:27017"
+volumes:
+  mongodb-datavolume:
