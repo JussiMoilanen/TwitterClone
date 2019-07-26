@@ -53,7 +53,7 @@ export default {
           password: this.password
         });
         localStorage.setItem("token", response.data.token); // store the token in localstorage
-        localStorage.setItem("user", response.data.user.username); // store the token in localstorage
+        localStorage.setItem("user", response.data.user.username); // store the user in localstorage
         this.$store.dispatch("setToken", response.data.token);
         this.$store.dispatch("setUser", response.data.user.username);
         this.$router.push({

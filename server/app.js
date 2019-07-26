@@ -14,9 +14,10 @@ app.use(cors());
 //routes
 require("./routes/routes")(app);
 
-//connect to mongodb
-let mongodburl = "mongodb://localhost:27017";
-//let mongodburl = "mongodb://mongo:27017" || process.env.MONGODB_URI;
+// connect to mongodb
+// for local development
+// let mongodburl = "mongodb://localhost:27017";
+let mongodburl = "mongodb://mongo:27017" || process.env.MONGODB_URI;
 mongoose
   .connect(mongodburl)
   .then(() => {

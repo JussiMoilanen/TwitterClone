@@ -58,18 +58,10 @@ export default {
       }
       this.message = "";
     }
-  },
-  computed: {
-    nodes() {
-      return this.message.split(/#([\w]+)/);
-    }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.mx-auto {
-  border: 1px;
-}
 </style>
